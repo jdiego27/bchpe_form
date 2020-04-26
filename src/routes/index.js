@@ -12,6 +12,7 @@ const passport = require('passport');
 const Dstr = require('../models/districts');
 const User = require('../models/user');
 const Cach = require('../models/cachuelos');
+const Deli = require('../models/delivery');
 
 
 // Initilization
@@ -406,6 +407,61 @@ router.get('/admin-users', isAuthenticated, async (req, res) => {
   const use = await Use.find();
   console.log(use);
   res.render('admin_users', {use});
+});
+
+
+// GET LISTA DELIVERY WITH INFO
+
+router.get('/lista-delivery', isAuthenticated, async (req, res) => {
+  const deli = await Deli.find();
+  console.log(deli);
+  res.render('lista_delivery', {deli});
+});
+
+
+// Table Export for LIST DELIVERY
+router.get('/export-excel-delivery/:table', isAuthenticated, async (req, res) => {
+  const deli = await Deli.find();
+  //ws.cell(1,1).string('No').style(style);
+  for(var i=0; i < deli.length; i++)
+  {
+
+    ws.row(2).freeze();
+    ws.column(1).setWidth(10);
+    ws.column(2).setWidth(20);
+    ws.column(3).setWidth(20);
+    ws.column(4).setWidth(20);
+    ws.column(5).setWidth(30);
+    ws.column(6).setWidth(20);
+    ws.column(7).setWidth(20);
+    ws.column(8).setWidth(20);
+    ws.column(9).setWidth(20);
+    ws.column(10).setWidth(20);
+
+
+    ws.cell(1, 1).string('LISTA DE DELIVERY').style(style2);
+    ws.cell(2, 1).string('N°').style(style2);
+    ws.cell(2, 2).string('NOMBRE').style(style2);
+    ws.cell(2, 3).string('APELLIDO').style(style2);
+    ws.cell(2, 4).string('NACIONALIDAD').style(style2);
+    ws.cell(2, 5).string('DNI / OTRO DOCUMENTO').style(style2);
+    ws.cell(2, 6).string('DISTRITO').style(style2);
+    ws.cell(2, 7).string('CELULAR').style(style2);
+    ws.cell(2, 8).string('TRANSPORTE').style(style2);
+    ws.cell(2, 9).string('PLACA').style(style2);
+ 
+    ws.cell(i+3,1).number(i+1).style(style);
+    ws.cell(i+3,2).string(deli[i].name).style(style)
+    ws.cell(i+3,3).string(deli[i].lastname).style(style);
+    ws.cell(i+3,4).string(deli[i].nationality).style(style);
+    ws.cell(i+3,5).string(deli[i].document_identity).style(style);
+    ws.cell(i+3,6).string(deli[i].district).style(style);
+    ws.cell(i+3,7).string(deli[i].cellphone).style(style);
+    ws.cell(i+3,8).string(deli[i].transport).style(style);
+    ws.cell(i+3,9).string(deli[i].plate).style(style);
+  }
+  
+  wb.write('Excel_Lista_Delivery_bchpe.xlsx', res)
 });
 
 module.exports = router;
