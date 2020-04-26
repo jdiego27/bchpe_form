@@ -12,51 +12,72 @@
     <img src="https://img.icons8.com/plasticine/100/000000/worldwide-delivery.png">
     <link rel="stylesheet" type="text/css" href="../favicon/bchpe_favicon.png">
     -->
+
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+        <!-- boostrap -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+
   </head>
-
-
 <body>
-         <nav class='navbar navbar-dark bg-dark mb-4'>
+
+            <nav class='navbar navbar-dark bg-dark'>
                 <a class="navbar-brand" href="/">BCHPE CONSULTING</a>
             </nav>
-        <ul class="nav nav-pills mb-4" id="navigation-bar">
+
+  <!-- This is the hamburger menu-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0"  id="navigation-bar">
           <%if (user) { %> 
                 <li class="nav-item">
-                  <a class="nav-link" href="/local-form">FORMULARIO</a>
+                  <a class="nav-link active text-primary" href="/local-form">FORMULARIO</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/jobs">LISTA DE AVISOS</a>
+                  <a class="nav-link active text-primary" href="/jobs">LISTA DE AVISOS</a>
                 </li>
                 
                 <%if (user.role == true) { %> 
                 
                   <li class="nav-item">
-                    <a class="nav-link" href="/candidates">LISTA CANDIDATOS</a>
+                    <a class="nav-link active text-primary" href="/candidates">LISTA CANDIDATOS</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/lista-delivery">LISTA DELIVERY</a>
+                    <a class="nav-link active text-primary" href="/lista-delivery">LISTA DELIVERY</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/admin-users">ADMIN. USUARIOS</a>
+                    <a class="nav-link active text-primary" href="/admin-users">ADMIN. USUARIOS</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/signup">REGISTRO DE USUARIOS</a>
+                    <a class="nav-link active text-primary" href="/signup">REGISTRO DE USUARIOS</a>
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link" href="/cachuelo-form">CACHUELOS</a>
+                    <a class="nav-link active text-primary" href="/cachuelo-form">CACHUELOS</a>
                   </li>
                 </li>
                   <%} %>
 
                 <li class=" ml-auto"> 
                     <li class="nav-item">
-                      <a class="nav-link" href="/profile">PERFIL</a>
+                      <a class="nav-link active text-primary" href="/profile">PERFIL</a>
                       <li class="nav-item">
-                      <a class="nav-link" href="/logout">SALIR</a>
+                      <a class="nav-link active text-primary" href="/logout">SALIR</a>
                       </li>
                     </li>
                 </li>
@@ -73,3 +94,4 @@
                   </li>
                 <% } %>
               </ul>
+            </nav>
