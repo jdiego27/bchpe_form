@@ -1,0 +1,79 @@
+
+<%- include('partials/_header'); -%>
+
+<div class="jumbotron text-center mb-4" style="margin-bottom:0">
+    <h1 class="display-3">Editar</h1>
+</div>
+<div class="container" style="margin-top: 30px;">
+  
+        <div class="row">
+                <!--FORM-->
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <form action="/update-position/<%= flyer._id %>" method="POST">
+                        <div class="form-group">
+                          <label for="position">Posicion</label>
+                          <input class="form-control" type="text" name="position" placeholder="" id="position" value="<%= flyer.position %>" required>
+                          
+                          <label for="district">Distrito</label>
+                          <input class="form-control" type="text" name="district" placeholder="" id="district" value="<%= flyer.district %>" required disabled>
+
+                          <label for="contact">Contacto (nombre de la empresa o persona a contactar)</label>
+                          <input class="form-control" type="text" name="contact" placeholder="" id="contact" value="<%= flyer.contact %>" required>
+
+                          <label for="ruc">RUC</label>
+                          <input class="form-control" type="text" name="ruc" placeholder="" id="ruc" value="<%= flyer.ruc %>" maxlength="11" required>
+
+
+                          <label for="description.header">Breve Descripcion del trabajo</label>
+                          <input class="form-control" type="text" name="description.header" placeholder="" id="description.header" value="<%= flyer.description.header %>" required>
+
+                          <label for="description.line_1">Experiencia 1</label>
+                          <input class="form-control" type="text" name="description.line_1" placeholder="" id="description.line_1" value="<%= flyer.description.line_1 %>" required>
+
+                          <label for="description.line_2">Experiencia 2</label>
+                          <input class="form-control" type="text" name="description.line_2" placeholder="" id="description.line_2" value="<%= flyer.description.line_2 %>" required>
+
+                          <label for="description.line_3">Experiencia 3</label>
+                          <input class="form-control" type="text" name="description.line_3" placeholder="" id="description.line_3" value="<%= flyer.description.line_3 %>" required>
+
+                          <label for="description.line_4">Experiencia 4</label>
+                          <input class="form-control" type="text" name="description.line_4" placeholder="" id="description.line_4" value="<%= flyer.description.line_4 %>" required>
+
+                          <label for="description.line_schedule">Horario de trabajo</label>
+                          <input class="form-control" type="text" name="description.line_schedule" placeholder="" id="description.line_schedule" value="<%= flyer.description.line_schedule%>" required>
+                          
+                          <label for="description.line_notes">Notas adicionales</label>
+                          <input class="form-control" type="text" name="description.line_notes" placeholder="" id="description.line_notes" value="<%= flyer.description.line_notes %>" required>
+
+                          <label for="cellphone">Numero de Celular</label>
+                          <input class="form-control" type="text" name="cellphone" placeholder="" id="cellphone" value="<%= flyer.cellphone %>" required>
+
+                          <label for="email">Email</label>
+                          <input class="form-control" type="text" name="email" placeholder="" id="email" value="<%= flyer.email %>">
+
+                          <label for="salary">Sueldo Aprox. (SOLO NUMEROS)</label>
+                          <input class="form-control" type="text" name="salary" placeholder="" id="salary" value="<%= flyer.salary %>">
+
+                          <label for="posting_date">Fecha de publicacion (DD-MM-AA)</label>
+                          <input class="form-control" type="text" name="posting_date" placeholder="" id="posting_date" value="<%= flyer.posting_date %>" required disabled>
+
+                          <label for="vacancy">Vacante (SOLO NUMEROS)</label>
+                          <input class="form-control" type="text" name="vacancy" placeholder="" id="vacancy" value="<%= flyer.vacancy %>" required>
+
+                        </div>
+                        <button class="btn btn-primary btn-block " type="submit">Actualizar</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                 <!-- to the right text-->
+            
+              </div>       
+            </div>
+
+<%- include('partials/_footer'); -%>
+              
+
+

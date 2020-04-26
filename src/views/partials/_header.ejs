@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BCHPE</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+    <!--
+    <img src="https://img.icons8.com/plasticine/100/000000/worldwide-delivery.png">
+    <link rel="stylesheet" type="text/css" href="../favicon/bchpe_favicon.png">
+    -->
+  </head>
+
+
+<body>
+         <nav class='navbar navbar-dark bg-dark mb-4'>
+                <a class="navbar-brand" href="/">BCHPE CONSULTING</a>
+            </nav>
+        <ul class="nav nav-pills mb-4" id="navigation-bar">
+          <%if (user) { %> 
+                <li class="nav-item">
+                  <a class="nav-link" href="/local-form">FORMULARIO</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/jobs">LISTA DE AVISOS</a>
+                </li>
+                
+                <%if (user.role == true) { %> 
+                
+                  <li class="nav-item">
+                    <a class="nav-link" href="/candidates">CANDIDATOS</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/admin-users">ADMIN. USUARIOS</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/signup">REGISTRO DE USUARIOS</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="/cachuelo-form">CACHUELOS</a>
+                  </li>
+                </li>
+                  <%} %>
+
+                <li class=" ml-auto"> 
+                    <li class="nav-item">
+                      <a class="nav-link" href="/profile">PERFIL</a>
+                      <li class="nav-item">
+                      <a class="nav-link" href="/logout">SALIR</a>
+                      </li>
+                    </li>
+                </li>
+                  
+                <% } else {  %>
+                  
+                <li class=" ml-auto"> 
+                  <li class="nav-item ">
+                    <a class="nav-link" href="/">ACCESO</a>
+                  </li>
+                  
+                <% } %>
+              </ul>

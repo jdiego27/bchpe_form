@@ -1,0 +1,66 @@
+
+<%- include('partials/_header'); -%>
+             
+    <div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+     <h1 class="display-3">Data</h1>
+    </div>
+
+<%- include('partials/_loginmessages'); -%>
+
+<div class="container">
+    <div class="row">
+            
+      <!-- This is the Button to export-->
+        <div class="col-md-12">
+            <a href="/export-excel/:table" class="btn btn-outline-primary btn-block text-uppercase"> Exportar a Excel</a>
+            
+        </div>
+        <br>
+        <br>
+            <!-- LIST -->
+            <div class="col-md-12 text-left" >
+
+          <table id="table" class="table table-bordered table-hover table-responsive-sm">
+                <thead class="thead-light">
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Nacionalidad</th>
+                    <th>Puesto</th>
+                    <th>Experiencia</th>
+                    <th>Distrito</th>
+                    <!-- 
+                    <th>Correo</th>
+                    -->
+                    <th>Celular</th>
+                  </tr>
+                </thead>
+                <tbody>
+                        <% for(var i=0; i < can.length; i++) { %>
+                            <tr>
+                              <td><%= i + 1%></td>
+                              <td><strong><%= can[i].name %></strong></td>
+                              <td><%= can[i].lastname %></td>
+                              <td><%= can[i].nationality %></td>
+                              <td><%= can[i].position %></td>
+                              <td><%= can[i].time_experience%></td>
+                              <td><%= can[i].district %></td>
+                              <!-- 
+                              <td><%= can[i].email %></td>
+                              -->
+                              <td><%= can[i].cellphone %></td>
+                            </tr>
+                          <% } %>     
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    
+    <%- include('partials/_footer'); -%>
+

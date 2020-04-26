@@ -1,0 +1,99 @@
+<%- include('partials/_header'); -%>
+
+<div class="jumbotron text-center mb-4 text-uppercase " style="margin-bottom:0">
+  <h1 class="display-3">Avisos</h1>
+</div>
+<%- include('partials/_loginmessages'); -%>
+
+      <div class="container">
+            <div class="row">
+                            
+                    <!-- LIST -->
+                    <div class="col-md-12 text-left" >
+                      <table class="table table-bordered table-hover table-responsive-sm">
+                        <thead class="thead-light">
+                          <tr>
+                            <th>N°</th>
+                            <th>Puesto</th>
+                            <th>Distrito</th>
+                            <th>Contacto</th>
+                            <th>Ruc</th>
+                            <th>Fecha Publicacion</th>
+                            <!-- 
+                            <th>Fecha Fin</th>
+                            -->
+                            
+                            <th>Vacantes</th>
+                            <th>Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td></td>
+                            <td> <input type="text"></td>
+                            <td>
+                              <select class="form-control form-control-sm" id="district" name="district" value="" required>
+                                <option></option>
+                                  <% for(var i=0; i < yo.length; i++){%>
+                                <option><%= yo[i].district %></option>
+                                <% } %>
+                              </select>
+                            </td>
+                            <td> <input type="text"></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                          </tr>
+                                <% for(var i=0; i < flyer.length; i++) { %>
+                                    <tr>
+                                      <td><%= i + 1%></td>
+                                      <td><strong><%= flyer[i].position %></strong></td>
+                                      <td><%= flyer[i].district %></td>
+                                      <td><%= flyer[i].contact %></td>
+                                      <td><%= flyer[i].ruc %></td>
+                                      <td><%= flyer[i].posting_date%></td>
+                                      <!-- 
+                                      <td><%= flyer[i].end_date %></td>
+                                      -->
+                                      <td><%= flyer[i].vacancy %></td>
+                                      
+                                      <td>
+                                          <div class="container">
+                                              <div class="row">
+                                                <div class="col-sm">
+                                                    <a href="/update-position/<%= flyer[i]._id%>" class="btn btn-outline-primary btn-block">
+                                                      Editar
+                                                    </a>
+                                                </div>
+                                                
+                                                <div class="col-sm mt-1">
+                                                    <a href="/remove-position/<%= flyer[i]._id%>" class="btn btn-outline-danger btn-block">
+                                                      Eliminar
+                                                    </a>
+                                                </div>
+                                                
+                                              </div>
+                                            </div>
+                                          <!-- 
+                                          <a href="/jobs/jobs-description/<%= flyer[i]._id%>" class="btn btn-outline-primary btn-block">
+                                          Editar
+                                          </a>
+                                          <a href="/jobs/jobs-description/<%= flyer[i]._id%>" class="btn btn-outline-danger btn-block">
+                                          Eliminar
+                                          </a>
+                                          -->
+                                      </td>
+                                    </tr>
+                                  <% } %>     
+                        </tbody>
+                      </table>
+                
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+
+<%- include('partials/_footer'); -%>

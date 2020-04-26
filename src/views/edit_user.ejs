@@ -1,0 +1,41 @@
+
+<%- include('partials/_header'); -%>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Editar Usuario</h1>
+</div>
+
+<div class="container"> 
+    <div class="row"> 
+        <div class="col-md-4 offset-md-4">
+            <div class="card mt-4">
+                <div class="card-header">
+                    <div class="card-body">
+                        <form action="/update-user/<%= usuario._id %>" method="POST">
+                            <div class="form-group text-uppercase"> 
+                            <label for="name">Nombres</label>
+                            <input type="text" name="name" required class="form-control" value="<%= usuario.name %>">
+                            <label for="lastname">Apellidos</label>
+                            <input type="text" name="lastname" required class="form-control" value="<%= usuario.lastname %>">
+                            <label for="cellphone">Celular</label>
+                            <input type="text" name="cellphone" required class="form-control" value="<%= usuario.cellphone %>" >
+                            <label for="role">Rol</label>
+                            <input type="text" name="cellphone" required class="form-control" value="<%= usuario.role %>" disabled>
+                            <label for="email">Email</label>
+                            <input type="email" name="email"  required class="form-control" value="<%= usuario.email %>" disabled>
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" value="" required class="form-control" disabled>
+                            <button type="submit" class="btn btn-primary btn-block mt-4" >
+                            Actualizar
+                            </button>
+                            </div>
+                        </form>
+                    </div>
+                <div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<%- include('partials/_footer'); -%>

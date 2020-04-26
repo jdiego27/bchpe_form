@@ -1,0 +1,42 @@
+<%- include('partials/_header'); -%>
+
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Registro</h1>
+  </div>
+
+<%- include('partials/_loginmessages'); -%>
+
+<div class="container"> 
+        <div class="row"> 
+            <div class="col-md-4 offset-md-4">
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <div class="card-body">
+                            <form action="/signup" method="POST">
+                                <div class="form-group text-uppercase"> 
+                                <label for="name">Nombres</label>
+                                <input type="text" name="name" value="" required class="form-control">
+                                <label for="lastname">Apellidos</label>
+                                <input type="text" name="lastname" value="" required class="form-control">
+                                <label for="cellphone">Celular</label>
+                                <input type="text" name="cellphone" value="" required class="form-control">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" value="" required class="form-control">
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="password" value="" required class="form-control">
+                                <button type="submit" class="btn btn-primary btn-block mt-4" >
+                                Registrate
+                                </button>
+                                </div>
+                            </form>
+                        </div>
+                    <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  <%- include('partials/_footer'); -%>

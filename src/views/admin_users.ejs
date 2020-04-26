@@ -1,0 +1,79 @@
+
+<%- include('partials/_header'); -%>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Admin. Usuarios</h1>
+</div>
+
+<%- include('partials/_loginmessages'); -%>
+
+<div class="container">
+    <div class="row">
+                    
+            <!-- LIST -->
+            <div class="col-md-12 text-left" >
+              <table class="table table-bordered table-hover table-responsive-sm">
+                <thead class="thead-light">
+                  <tr>
+                    <th>N°</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Celular</th>
+                    <th>Rol</th>
+                    <!-- 
+                    <th>Fecha Fin</th>
+                    -->
+                    <th>Email</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td> <input type="text"></td>
+                    <td> <input type="text"></td>
+                    <td> </td>
+                    <td> </td>
+                    <td> <input type="text"></td>
+                    <td> </td>
+                  </tr>
+                        <% for(var i=0; i < use.length; i++) { %>
+                            <tr>
+                              <td><%= i + 1%></td>
+                              <td><strong><%= use[i].name %></strong></td>
+                              <td><%= use[i].lastname %></td>
+                              <td><%= use[i].cellphone %></td>
+                              <td><%= use[i].role%></td>
+                              
+                              <td><%= use[i].email %></td>
+                              
+                              <td>
+                                  <div class="container">
+                                      <div class="row">
+                                        <div class="col-sm">
+                                            <a href="/update-user/<%= use[i]._id%>" class="btn btn-outline-primary btn-block">
+                                              Editar
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="col-sm mt-1">
+                                            <a href="/remove-user/<%= use[i]._id%>" class="btn btn-outline-danger btn-block">
+                                              Eliminar
+                                            </a>
+                                        </div>
+                                        
+                                      </div>
+                                    </div>
+                                  
+                              </td>
+                            </tr>
+                          <% } %>     
+                </tbody>
+              </table>
+        
+            </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>

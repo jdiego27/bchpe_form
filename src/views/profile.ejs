@@ -1,0 +1,16 @@
+<%- include('partials/_header'); -%>
+
+<div class="jumbotron text-center mb-4 text-uppercase" style="margin-bottom:0">
+    <h1 class="display-3">Perfil</h1>
+</div>
+
+<div class="container">
+    <% if (success.length > 0) { %>
+        <div class="alert alert-success">
+            <%= success %> </div>
+    <% } %>
+</div>
+
+<div class="container">
+    <h1>BIENVENIDO <strong> <%= user.name%> <%= user.lastname%>! </strong></h1>
+</div>
